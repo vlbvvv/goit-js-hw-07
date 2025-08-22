@@ -1,7 +1,13 @@
-const input = document.querySelector("#name-input");
+const inputName = document.querySelector("#name-input");
+const spanName = document.querySelector("#name-output");
 
-const output = document.querySelector("#name-output");
+inputName.addEventListener("input", handleInputClick);
 
-input.addEventListener("input", () => {
-  output.textContent = input.value.trim() ? input.value : "Anonymous";
-});
+function handleInputClick() {
+  const inputValue = inputName.value.trim();
+  if (inputValue === "") {
+    spanName.textContent = "Anonymous";
+  } else {
+    spanName.textContent = inputValue;
+  }
+}
